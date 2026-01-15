@@ -1,0 +1,104 @@
+<main class="main">
+  <div class="card">
+    <div class="card-body">
+      <h2>{{ isAllReadyAccount ? 'Sign Up' : 'Log In' }}</h2>
+
+      <!-- LOGIN FORM -->
+      <form
+        #loginForm="ngForm"
+        (ngSubmit)="onLogin()"
+        *ngIf="!isAllReadyAccount"
+      >
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            ngModel
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            ngModel
+            required
+            class="form-control"
+          />
+        </div>
+
+        <button mat-raised-button class="mb-3"  color="primary" type="submit">
+          Log In
+        </button>
+
+       <div>
+           <a href="javascript:;" (click)="isAllReadyAccount = true" class="btn-link">
+        Don't have account?
+      </a>
+       </div>
+      </form>
+
+    
+
+      <!-- SIGNUP FORM -->
+      <form
+        #signupForm="ngForm"
+        (ngSubmit)="onSignUp()"
+        *ngIf="isAllReadyAccount"
+      >
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            ngModel
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            ngModel
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="role">User Role</label>
+          <select
+            id="role"
+            name="role"
+            ngModel
+            required
+            class="form-control"
+          >
+            <option value="">Select Role</option>
+            <option value="buyer">Buyer</option>
+            <option value="admin">Admin</option>
+            <option value="superadmin">Super Admin</option>
+          </select>
+        </div>
+
+        <button mat-raised-button class="mb-3" color="primary" type="submit">
+          Sign Up
+        </button>
+          <div>
+           <a href="javascript:;" (click)="isAllReadyAccount =false " class="btn-link">
+        Don't have account
+     </a>
+     </div>
+      </form>
+
+      
+    </div>
+  </div>
+</main>

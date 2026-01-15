@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { IFair } from '../model/fair';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

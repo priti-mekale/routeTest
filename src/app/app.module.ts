@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
@@ -18,6 +18,14 @@ import { MaterialModule } from './shared/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm.component';
 import { FairDashboardComponent } from './shared/components/fair-dashboard/fair-dashboard.component';
+import { FairCardComponent } from './shared/components/fair-card/fair-card.component';
+import { FairDetailsComponent } from './shared/components/fair-details/fair-details.component';
+import { HomeComponent } from './shared/components/home/home.component';
+import { RouterModule } from '@angular/router';
+import { ApproutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { AuthComponent } from './shared/components/auth/auth.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,19 +36,23 @@ import { FairDashboardComponent } from './shared/components/fair-dashboard/fair-
     ProductFormComponent,
     ProductDashboardComponent,
     SingleProductComponent,
-
+    FairCardComponent,
+    FairDetailsComponent,
     SingleUserComponent,
     UserFormComponent,
     UserDashboardComponent,
     UserListComponent,
     GetConfirmComponent,
-    FairDashboardComponent
+    FairDashboardComponent,
+    HomeComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+   RouterModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,ApproutingModule,FormsModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
